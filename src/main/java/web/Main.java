@@ -2,12 +2,14 @@ package web;
 
 import web.model.Car;
 import web.service.CarService;
+import web.service.CarServiceImpl;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Car> cars = CarService.getCarsCount(3);
+        CarService carService = new CarServiceImpl();
+        List<Car> cars = carService.getCarsCount(3);
 
         for (Car car : cars) {
             System.out.println("Color: " + car.getColor() +
